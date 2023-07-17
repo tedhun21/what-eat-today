@@ -1,7 +1,7 @@
 <br>
 
-## **Project. Exercise Tracker**
->**[코드스테이츠 FE 45기] 스터디_빈.진.우(beenzinoo)** <br>
+## **Project. What eat today**
+>**[코드스테이츠 FE 45기] 스터디_참숯가마** <br>
 >**개발기간 : 2023.7.17 ~ 2023.08.5**
 
 <br>
