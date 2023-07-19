@@ -32,6 +32,11 @@ div{font-family: "Samlip Basic";}
 /*  */
 
 
+/* 바디 */
+/*  */
+body {z-index: -2;}
+
+
 /* 헤더 */
 /*  */
 header {
@@ -65,3 +70,42 @@ header > .container-fluid > .row > .col:nth-child(4) {justify-content: flex-end;
 #text-right {margin-right: 50px;}
 /*  */
 /*  */
+
+
+/* 메인 (기본 폼) */
+/*  */
+main {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 1753.11px;
+  height: 1117px;
+  z-index: -1;
+}
+.Background {
+  background: url(/public/images/RainyBackground.gif),  no-repeat ;
+  background-size: cover;
+  width: 1753.11px;
+  height: 1117px;
+  opacity: 0.5;
+}
+.Outline {
+  width: 1678px;
+  height: 959px;
+  border-radius: 15px;
+  border: 4px solid #C47E98;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.Inline {
+  width: 1628px;
+  height: 900px;
+  border: 4px solid #C47E98;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
