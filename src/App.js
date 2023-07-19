@@ -6,6 +6,7 @@ import Footer from "./components/Footer.js"
 import Start from "./pages/Start"
 import Decided from "./pages/Decided"
 import Undecided from "./pages/Undecided"
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/Decided" element={<Decided />} />
         <Route path="/Undecided" element={<Undecided />} />
       </Routes>
+      <Map />
       <Footer />
     </>
   );
