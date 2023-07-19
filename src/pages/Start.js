@@ -1,8 +1,9 @@
-const Header = () => {
+const Start = () => {
     return (
         <>
+
         </>
     )
 }
 
-export default Header
+export default Start
