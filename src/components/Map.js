@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 const { kakao } = window;
 
-console.log(window.kakao);
-
 const Map = () => {
   const [coords, setCoords] = useState({ latitude: 0, longitude: 0 });
   const REST_API_KEY = process.env.REACT_APP_REST_API_KEY;
