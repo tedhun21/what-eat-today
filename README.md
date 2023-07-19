@@ -46,3 +46,4 @@
 
 ## 아키텍쳐
 ### 디렉토리 구조
+<img src="./public/images/오늘뭐먹_.png"/>
