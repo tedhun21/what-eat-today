@@ -1,9 +1,12 @@
 import Map from "../components/Map";
+import Menu from "../components/Menu";
 
 const Result = () => {
   return (
     <div>
-      <Map />
+      <div className="map_wrap">
+        <Map />
+      </div>
     </div>
   );
 };
