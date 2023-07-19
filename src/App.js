@@ -6,7 +6,7 @@ import Footer from "./components/Footer.js";
 import Start from "./pages/Start";
 import Decided from "./pages/Decided";
 import Undecided from "./pages/Undecided";
-import Result from "./components/Result";
+import Result from "./pages/Result";
 
 function App() {
   return (
