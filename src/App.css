@@ -239,16 +239,6 @@ main {
 }
 
 
-/* DecidedWrab 부분 */
-/*  */
-
-.map-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 /* Decided 부분 */
 /*  */
 .BackBtn {
