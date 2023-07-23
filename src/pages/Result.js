@@ -3,11 +3,18 @@ import Menu from "../components/Menu";
 
 const Result = () => {
   return (
-    <div>
-      <div className="map_wrap">
-        <Map />
+    <main>
+      <div className="Background">
+        <div className="Outline">
+          <div className="Inline">
+            {/* <div className="map_wrap">
+              <Map />
+            </div> */}
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
+
   );
 };
 

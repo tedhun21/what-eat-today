@@ -1,3 +1,7 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 const Start = () => {
     return (
         <main>
@@ -12,9 +16,9 @@ const Start = () => {
                             <div className="TitleText">
                                 <span>메뉴 추천 받으러 가기</span>
                             </div>
-                            <div className="StartBtn">
-                                <span>START</span>
-                            </div>
+                            <Link to="/Decided">
+                                <Button variant="danger">START</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
