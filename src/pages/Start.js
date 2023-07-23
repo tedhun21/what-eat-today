@@ -16,7 +16,7 @@ const Start = () => {
                             <div className="TitleText">
                                 <span>메뉴 추천 받으러 가기</span>
                             </div>
-                            <Link to="/Decided">
+                            <Link to="/decided">
                                 <Button variant="danger">START</Button>
                             </Link>
                         </div>
