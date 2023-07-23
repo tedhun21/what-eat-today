@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../App.css";
+import axios from "axios";
 
 const Header = () => {
   // 현재 시간을 보여줄 상태 변수 선언
@@ -21,6 +22,20 @@ const Header = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // 현재 날씨를 받아올 상채 변수 선언
+  const [weather, setWeather] = useState(null);
+
+  useEffect(() => {
+    // OpenWeather APT로 날씨 받아오기
+    const API_KEY = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
+    const city = "seoul";
+
+    axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&lang=kr`
+    )
+      .then(res => console.log(res.data.weather))
+  })
 
   return (
     <header>
