@@ -34,7 +34,7 @@ div{font-family: "Samlip Basic";}
 
 /* 바디 */
 /*  */
-body {z-index: -2;}
+/* body {z-index: -2;} */
 
 
 /* 헤더 */
@@ -44,10 +44,15 @@ header {
   height: 120px;
   margin: auto;
   border: 2px solid rgba(119, 119, 119, 0.25);
-  background: rgba(255, 206, 206, 0.43);
+  background: rgba(250, 167, 167, 0.43);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  /* z-index: 1; */
 }
-header > .container-fluid > .row > div {
+header > #TimeBackground > .container-fluid > .row > div {
   display: flex;
   align-items: center;
 }
@@ -66,11 +71,35 @@ header span {
 }
 #text-left {margin-left: 50px;}
 /* 현재시간 오른쪽 정렬 */
-header > .container-fluid > .row > .col:nth-child(4) {justify-content: flex-end;}
+header > #TimeBackground > .container-fluid > .row > .col:nth-child(4) {justify-content: flex-end;}
 #text-right {margin-right: 50px;}
 /*  */
 /*  */
 
+
+/* 시간에 따른 .Background 설정 */
+/*  */
+
+#TimeBackground {
+  width: 1728px;
+  height: 1117px;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  background-size: cover;
+  background-position: center center;
+}
+
+/* 오전 6시부터 14시까지의 Background 스타일 */
+.Background-morning {background: url(/public/images/LunchBackground.gif),  no-repeat ;}
+
+/* 오후 2시부터 10시까지의 Background 스타일 */
+.Background {background: url(/public/images/BreakfastBackground.gif),  no-repeat ;}
+
+/* 오후 10시부터 6시까지의 Background 스타일 */
+.Background-night {background: url(/public/images/DinnerBackground.gif),  no-repeat ;}
 
 /* 메인 (기본 폼) */
 /*  */
@@ -79,18 +108,19 @@ main {
   top: 0;
   left: 50%;
   transform: translate(-50%,0);
-  width: 1753.11px;
+  width: 1728px;
   height: 1117px;
-  z-index: -1;
 }
-.Background {
-  background: url(/public/images/RainyBackground.gif),  no-repeat ;
+
+/*.Background {
+   background: url(/public/images/RainyBackground.gif),  no-repeat ;
   background-size: cover;
-  background-position: center center;
+  background-position: center center; 
   width: 1753.11px;
   height: 1117px;
   opacity: 0.5;
-}
+}*/
+
 .Outline {
   width: 1678px;
   height: 959px;
@@ -165,6 +195,9 @@ main {
   font-size: 80px;
   line-height: normal;
   font-family: SansSerifBldFLF;
+  background: #ff8eb9;
+  border: 4px solid #ff8eb9;
+  opacity: 0.8;
 }
 
 

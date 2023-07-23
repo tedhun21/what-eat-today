@@ -3,7 +3,7 @@ import React from "react";
 const Decided = () => {
     return (
         <main>
-            <div className="Background">
+            <div className="Container">
                 <div className="Outline">
                     <div className="Inline">
                         <div className="DecidedWrab">

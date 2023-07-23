@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 const Start = () => {
     return (
         <main>
-            <div className="Background">
+            <div className="Container">
                 <div className="Outline">
                     <div className="Inline">
                         <div className="StartWrap">
