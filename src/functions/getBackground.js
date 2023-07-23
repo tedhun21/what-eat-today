@@ -7,7 +7,7 @@ export const getBackground = () => {
   if (hours >= 6 && hours < 14) {
     // 오전 6시부터 오후 2시까지의 Background 클래스
     return "Background-morning";
-  } else if (hours >= 14 || hours < 22) {
+  } else if (hours >= 14 && hours < 22) {
     // 오후 2시부터 10시까지의 Background 클래스
     return "Background";
   } else {

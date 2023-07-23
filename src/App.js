@@ -10,7 +10,7 @@ import { getBackground } from "./functions/getBackground";
 
 function App() {
   return (
-    <div className={getBackground()}>
+    <div className={getBackground()} id="TimeBackground">
       <Header />
       <Routes>
         <Route path="/" element={<Start />} />
