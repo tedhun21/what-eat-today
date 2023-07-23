@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 const Result = () => {
   return (
     <main>
-      <div className="Background">
+      <div className="Container">
         <div className="Outline">
           <div className="Inline">
+
             <div className="DecidedWrap">
               <Link to="/decided-result">
                 <div className="BackBtn" />
@@ -15,18 +16,14 @@ const Result = () => {
               <div className="ResultTitle">
                 <h1>최종 누른 버튼 값</h1>
               </div>
-              <div className="MapWrap">
-                {/* <div className="map_wrap">
-                  <Map />
-                </div> */}
+              <div className="map-wrap">
+                <Map />
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </main>
-
   );
 };
 
