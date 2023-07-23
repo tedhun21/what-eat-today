@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom';
 const Result = () => {
   return (
     <main>
-      <div className="Background">
+      <div className="Container">
         <div className="Outline">
           <div className="Inline">
+
+    
+            <div className="map-wrap">
+              <Map />
+
             <div className="DecidedWrap">
               <Link to="/decided-result">
                 <div className="BackBtn" />
@@ -21,12 +26,12 @@ const Result = () => {
                 </div> */}
               </div>
 
+
             </div>
           </div>
         </div>
       </div>
     </main>
-
   );
 };
 
