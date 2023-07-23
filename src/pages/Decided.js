@@ -1,10 +1,12 @@
+import React from "react";
+
 const Decided = () => {
     return (
         <main>
             <div className="Background">
                 <div className="Outline">
                     <div className="Inline">
-                        <div>
+                        <div className="DecidedWrab">
 
                         </div>
                     </div>
