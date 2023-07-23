@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react";
 import Menu from "./Menu";
+import { useGeolocation } from "../functions/useGeolocation";
+import { useAddress } from "../functions/useAddress";
 
 const { kakao } = window;
 
 const Map = () => {
-  const [coords, setCoords] = useState({ latitude: 0, longitude: 0 });
-  const REST_API_KEY = process.env.REACT_APP_REST_API_KEY;
+  const coords = useGeolocation();
+  const address = useAddress();
+  const [keyword, setKeyword] = useState("");
 
-  const showPosition = (position) => {
-    setCoords({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-    });
+  const onChange = (e) => {
+    setKeyword(e.target.value);
   };
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      console.log("Geolocation이 지원되지 않습니다.");
-    }
-  }, []);
-  console.log(kakao);
+    setKeyword(address);
+  }, [address]);
 
   useEffect(() => {
     let markers = []; // 마커를 담을 배열
@@ -41,13 +36,15 @@ const Map = () => {
 
     // 키워드 검색을 요청하는 함수
     function searchPlaces(event) {
-      const keyword = document.getElementById("keyword").value;
+      if (keyword) {
+        const keyword = document.getElementById("keyword").value;
 
-      if (!keyword.replace(/^\s+|\s+$/g, "")) {
-        alert("키워드를 입력해주세요!");
-        return false;
+        if (!keyword.replace(/^\s+|\s+$/g, "")) {
+          alert("키워드를 입력해주세요!");
+          return false;
+        }
+        ps.keywordSearch(keyword, placesSearchCB);
       }
-      ps.keywordSearch(keyword, placesSearchCB);
     }
     function placesSearchCB(data, status, pagination) {
       if (status === kakao.maps.services.Status.OK) {
@@ -163,11 +160,7 @@ const Map = () => {
           spriteOrigin: new kakao.maps.Point(0, idx * 46 + 10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
           offset: new kakao.maps.Point(13, 37), // 마커 좌표에 일치시킬 이미지 내에서의 좌표
         },
-        markerImage = new kakao.maps.MarkerImage(
-          imageSrc,
-          imageSize,
-          imgOptions,
-        ),
+        markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
         marker = new kakao.maps.Marker({
           position: position, // 마커의 위치
           image: markerImage,
@@ -233,16 +226,22 @@ const Map = () => {
         el.removeChild(el.lastChild);
       }
     }
-  }, [coords]);
+  }, [coords, keyword]);
   return (
     <>
-      <div id="map" style={{ width: "100vw", height: "100vh" }}></div>
+      <div id="map" style={{ width: "1000px", height: "500px" }}></div>
       <div id="menu_wrap" className="bg_white">
         <div className="option">
           <div>
             <form>
               키워드 :{" "}
-              <input type="text" value="이태원 맛집" id="keyword" size="15" />
+              <input
+                type="text"
+                value={keyword !== null ? keyword : ""}
+                id="keyword"
+                size="15"
+                onChange={onChange}
+              />
               <button type="submit">검색하기</button>
             </form>
           </div>
