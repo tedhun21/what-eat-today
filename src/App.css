@@ -139,6 +139,10 @@ header > .container-fluid > .row > .col:nth-child(4) {
   background: url(/public/images/DinnerBackground.gif), no-repeat;
 }
 
+.Background-rainy {
+  background: url(/public/images/RainyBackground.gif), no-repeat;
+}
+
 /* 메인 (기본 폼) */
 /*  */
 main {
@@ -238,13 +242,12 @@ main {
   opacity: 0.8;
 }
 
-
 /* Decided 부분 */
 /*  */
 .BackBtn {
   width: 60px;
   height: 60px;
-  background: url(/public/images/back-btn.png),  no-repeat ;
+  background: url(/public/images/back-btn.png), no-repeat;
   background-size: cover;
   background-position: center center;
   cursor: pointer;
@@ -253,20 +256,20 @@ main {
   left: 45px;
 }
 .BackBtn:hover {
-  background: url(/public/images/back-btn-on.png),  no-repeat ;
+  background: url(/public/images/back-btn-on.png), no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .DecidedWrap {
   width: 1350px;
   height: 825px;
-  background: rgba(255, 235, 241, 0.80);
-  border: 4px solid #C47E98;
+  background: rgba(255, 235, 241, 0.8);
+  border: 4px solid #c47e98;
   border-radius: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .BtnWrap {
   width: 700px;
@@ -278,7 +281,7 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .BtnWrap Button {
   width: 300px;
@@ -298,7 +301,7 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .ResultWrap Button {
   width: 300px;
@@ -306,10 +309,9 @@ main {
   font-size: 50px;
 }
 
-
 /* Result 부분 */
 /*  */
-.ResultTitle{
+.ResultTitle {
   display: flex;
   justify-content: center;
   margin: 80px 0 50px 0;

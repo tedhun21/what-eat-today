@@ -1,10 +1,14 @@
-export const getBackground = () => {
+export const getBackground = (weatherMain) => {
   // 시간대에 따라 Background 클래스를 지정하는 함수
+
+  const isRain = weatherMain?.includes("Rain");
 
   const now = new Date();
   const hours = now.getHours();
 
-  if (hours >= 6 && hours < 14) {
+  if (isRain) {
+    return "Background-rainy";
+  } else if (hours >= 6 && hours < 14) {
     // 오전 6시부터 오후 2시까지의 Background 클래스
     return "Background-morning";
   } else if (hours >= 14 && hours < 22) {
