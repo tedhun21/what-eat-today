@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import Menu from "./Menu";
 import { useGeolocation } from "../functions/useGeolocation";
 import { useAddress } from "../functions/useAddress";
 import "./Map.css";
 
 const { kakao } = window;
 
-const Map = () => {
+const Map = ({ subclass }) => {
   const coords = useGeolocation();
   const address = useAddress();
+
   const [keyword, setKeyword] = useState("");
 
   const onChange = (e) => {
@@ -16,8 +16,10 @@ const Map = () => {
   };
 
   useEffect(() => {
-    setKeyword(address);
-  }, [address]);
+    if (address && subclass) {
+      setKeyword(`${address} ${subclass}`);
+    }
+  }, [address, subclass]);
 
   useEffect(() => {
     let markers = []; // 마커를 담을 배열

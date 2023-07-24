@@ -1,8 +1,10 @@
 import Map from "../components/Map";
-import Menu from "../components/Menu";
-import { Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Result = () => {
+
+  const { subclass } = useParams()
+  const navigate = useNavigate()
   return (
     <main>
       <div className="Container">
@@ -10,14 +12,14 @@ const Result = () => {
           <div className="Inline">
 
             <div className="DecidedWrap" id="result_wrap">
-              <Link to="/decided-result">
-                <div className="BackBtn" />
-              </Link>
+
+              <div onClick={() => navigate(-1)} className="BackBtn" />
+
               <div className="ResultTitle">
-                <h1>최종 누른 버튼 값</h1>
+                <h1>내 주변 {subclass} 추천</h1>
               </div>
               <div className="map_wrap">
-                <Map />
+                <Map subclass={subclass} />
               </div>
             </div>
           </div>
