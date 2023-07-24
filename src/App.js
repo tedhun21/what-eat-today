@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/decided" element={<Decided />} />
-        <Route path="/decided-result" element={<DecidedResult />} />
-        <Route path="/result" element={<Result />} />
+        <Route path="/decided-result/:section" element={<DecidedResult />} />
+        <Route path="/result/:subclass" element={<Result />} />
       </Routes>
     </div>
   );

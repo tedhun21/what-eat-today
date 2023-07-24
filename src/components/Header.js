@@ -4,10 +4,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../App.css";
 import axios from "axios";
+import { getBackground } from "../functions/getBackground";
 
 const Header = () => {
   // 현재 시간을 보여줄 상태 변수 선언
   const [currentTime, setCurrentTime] = useState("");
+  // 현재 날씨를 받아올 상태 변수 선언
+  const [weather, setWeather] = useState(null);
+
 
   useEffect(() => {
     // 1초마다 현재 시간 업데이트
@@ -24,9 +28,6 @@ const Header = () => {
   }, []);
 
 
-  // 현재 날씨를 받아올 상태 변수 선언
-  const [weather, setWeather] = useState(null);
-
   useEffect(() => {
     // OpenWeather APT로 날씨 받아오기
     // API KEY와 지역 받아오기
@@ -40,9 +41,7 @@ const Header = () => {
       .then(res => {
         const weatherMain = res.data.weather.map(item => item.main);
         setWeather(weatherMain);
-
-        //불러오는 날씨 확인
-        console.log(weatherMain)
+        // getBackground(weatherMain)
       })
       .catch(error => {
         console.error(error);
