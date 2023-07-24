@@ -7,12 +7,14 @@ import Start from "./pages/Start";
 import Decided from "./pages/Decided";
 import DecidedResult from "./pages/DecidedResult";
 import Result from "./pages/Result";
-import { getBackground } from "./functions/getBackground";
+import { useWeather } from "./functions/useWeather";
 
 function App() {
+  const { weather, weatherClass } = useWeather();
+
   return (
-    <div className={getBackground()} id="TimeBackground">
-      <Header />
+    <div className={weatherClass} id="TimeBackground">
+      <Header weather={weather} />
       <Routes>
         <Route path="/" element={<Start />} />
         <Route path="/decided" element={<Decided />} />

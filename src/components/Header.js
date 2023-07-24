@@ -6,12 +6,10 @@ import "../App.css";
 import axios from "axios";
 import { getBackground } from "../functions/getBackground";
 
-const Header = () => {
+const Header = ({ weather }) => {
   // 현재 시간을 보여줄 상태 변수 선언
   const [currentTime, setCurrentTime] = useState("");
   // 현재 날씨를 받아올 상태 변수 선언
-  const [weather, setWeather] = useState(null);
-
 
   useEffect(() => {
     // 1초마다 현재 시간 업데이트
@@ -26,28 +24,6 @@ const Header = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-
-  useEffect(() => {
-    // OpenWeather APT로 날씨 받아오기
-    // API KEY와 지역 받아오기
-    const API_KEY = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
-    const city = "seoul";
-
-    // axios로 서버에 원하는 결과 Get 요청
-    axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
-    )
-      .then(res => {
-        const weatherMain = res.data.weather.map(item => item.main);
-        setWeather(weatherMain);
-        // getBackground(weatherMain)
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-
 
   return (
     <header>
