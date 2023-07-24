@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../App.css";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import { getBackground } from "../functions/getBackground";
 
@@ -33,10 +34,14 @@ const Header = ({ weather }) => {
             <span id="text-left">날씨 : {weather || "로딩 중..."}</span>
           </Col>
           <Col sm={1}>
-            <img id="LogoImg" src="/images/HeaderLogo.png" alt="로고" />
+            <Link to="/">
+              <img id="LogoImg" src="/images/HeaderLogo.png" alt="로고" />
+            </Link>
           </Col>
           <Col sm="auto">
-            <h1>오늘 뭐 먹지</h1>
+            <Link to="/">
+              <h1>오늘 뭐 먹지</h1>
+            </Link>
           </Col>
           <Col>
             <span id="text-right">현재시간 : {currentTime}</span>
