@@ -23,26 +23,39 @@ const Header = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 현재 날씨를 받아올 상채 변수 선언
+
+  // 현재 날씨를 받아올 상태 변수 선언
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     // OpenWeather APT로 날씨 받아오기
+    // API KEY와 지역 받아오기
     const API_KEY = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
     const city = "seoul";
 
+    // axios로 서버에 원하는 결과 Get 요청
     axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&lang=kr`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
     )
-      .then(res => console.log(res.data.weather))
-  })
+      .then(res => {
+        const weatherMain = res.data.weather.map(item => item.main);
+        setWeather(weatherMain);
+
+        //불러오는 날씨 확인
+        console.log(weatherMain)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
 
   return (
     <header>
       <Container fluid>
         <Row>
           <Col>
-            <span id="text-left">날씨 : 비</span>
+            <span id="text-left">날씨 : {weather || "로딩 중..."}</span>
           </Col>
           <Col sm={1}>
             <img id="LogoImg" src="/images/HeaderLogo.png" alt="로고" />

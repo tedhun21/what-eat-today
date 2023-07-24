@@ -1,4 +1,4 @@
-.map_wrap,
+/* .map_wrap,
 .map_wrap * {
   margin: 0;
   padding: 0;
@@ -15,13 +15,17 @@
   position: relative;
   width: 100%;
   height: 100%;
-}
+} */
+
+
 .map-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
+
 #menu_wrap {
   position: absolute;
   top: 0;
@@ -98,6 +102,8 @@
   background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
     no-repeat;
 }
+
+/* 지도 서치부분에 각 순서별 지도위치 아이콘 */
 #placesList .item .marker_1 {
   background-position: 0 -10px;
 }
