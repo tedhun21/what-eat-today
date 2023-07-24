@@ -9,14 +9,14 @@ const Result = () => {
         <div className="Outline">
           <div className="Inline">
 
-            <div className="DecidedWrap">
+            <div className="DecidedWrap" id="result_wrap">
               <Link to="/decided-result">
                 <div className="BackBtn" />
               </Link>
               <div className="ResultTitle">
                 <h1>최종 누른 버튼 값</h1>
               </div>
-              <div className="map-wrap">
+              <div className="map_wrap">
                 <Map />
               </div>
             </div>
