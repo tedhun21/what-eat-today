@@ -7,7 +7,6 @@ export const useAddress = () => {
   const REST_API_KEY = process.env.REACT_APP_REST_API_KEY;
   const [address, setAddress] = useState(null);
   const coords = useGeolocation();
-  // console.log(address.documents[0].address.region_3depth_name);
 
   useEffect(() => {
     if (coords.longitude !== 0 || coords.latitude !== 0) {
