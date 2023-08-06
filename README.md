@@ -45,3 +45,52 @@
 ## 아키텍쳐
 ### 디렉토리 구조
 <img src="./public/images/오늘뭐먹_.png"/>
+
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── BreakfastBackground.gif
+│   │   ├── DinnerBackground.gif
+│   │   ├── HeaderLogo.png
+│   │   ├── Jihun.png
+│   │   ├── LunchBackground.gif
+│   │   ├── RainyBackground.gif
+│   │   ├── RainyEnd.gif
+│   │   ├── ResultEvent.gif
+│   │   ├── Yebin.jpg
+│   │   ├── back-btn-on.png
+│   │   ├── back-btn.png
+│   │   └── 오늘뭐먹_.png
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+└── src
+    ├── App.css
+    ├── App.js
+    ├── components
+    │   ├── Header.js
+    │   ├── Map.css
+    │   └── Map.js
+    ├── data
+    │   └── Data.js
+    ├── font
+    │   ├── AnyConv.com__SDSamliphopangcheTTFBasic.woff
+    │   ├── AnyConv.com__SDSamliphopangcheTTFOutline.woff
+    │   └── Font.css
+    ├── functions
+    │   ├── getBackground.js
+    │   ├── useAddress.js
+    │   ├── useGeolocation.js
+    │   └── useWeather.js
+    ├── index.css
+    ├── index.js
+    └── pages
+        ├── Decided.js
+        ├── DecidedResult.js
+        ├── Result.js
+        └── Start.js
