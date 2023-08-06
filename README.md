@@ -16,7 +16,8 @@
 <br>
 
 ## 프로젝트 소개
-<img width="750px" src="public/images/WhatEatToday-Movie.gif" />
+![ezgif com-video-to-gif](https://github.com/YebinYun/what-eat-today/assets/82702997/8c580a12-7cee-4ae5-b22d-1dedba17bcba)
+
 
 ## 주요 기능
 ### 추천 받고 싶은 메뉴를 보기를 통해 고르도록 구현
